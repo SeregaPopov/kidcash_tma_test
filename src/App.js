@@ -9,23 +9,34 @@ function App() {
 
   useEffect(() => {
     // Инициализируем Telegram Web Apps SDK
-    const tg = window.Telegram.WebApp;
-    //tg.expand(); // Разворачиваем приложение на весь экран
+    //const tg = window.Telegram.WebApp;
 
-    // Получаем информацию о пользователе
-    const fetchUserData = async () => {
-      try {
-        const userData = tg.initDataUnsafe.user; // Получаем данные о пользователе
-        if (!userData) {
-          throw new Error('Не удалось получить данные о пользователе');
+
+    if (window.Telegram && window.Telegram.WebApp) {
+      const tg = window.Telegram.WebApp;
+      tg.expand(); // Разворачиваем приложение на весь экран
+      
+          // Получаем информацию о пользователе
+      const fetchUserData = async () => {
+        try {
+          const userData = tg.initDataUnsafe.user; // Получаем данные о пользователе
+          if (!userData) {
+            throw new Error('Не удалось получить данные о пользователе');
+          }
+          setUser(userData); // Сохраняем данные о пользователе в состоянии
+        } catch (err) {
+          setError(err.message); // Сохраняем сообщение об ошибке в состоянии
         }
-        setUser(userData); // Сохраняем данные о пользователе в состоянии
-      } catch (err) {
-        setError(err.message); // Сохраняем сообщение об ошибке в состоянии
-      }
-    };
+      };
 
-    fetchUserData();
+      fetchUserData();
+
+    } else {
+      console.error('Telegram WebApp SDK не доступен');
+    }
+
+
+
     
 
   }, []);
