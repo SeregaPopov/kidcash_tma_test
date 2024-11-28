@@ -1,7 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, { useEffect } from 'react';
+
 function App() {
+
+  useEffect(() => {
+    // Инициализируем Telegram Web Apps SDK
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // Разворачиваем приложение на весь экран
+// Изменение заголовка приложения
+tg.MainButton.text = "Нажми меня!";
+tg.MainButton.show();
+    
+
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
