@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/kidcash_tma_test/static/css/main.f855e6bc.css",
-    "main.js": "/kidcash_tma_test/static/js/main.b01a38d0.js",
+    "main.js": "/kidcash_tma_test/static/js/main.fd878c85.js",
     "static/js/453.2f679600.chunk.js": "/kidcash_tma_test/static/js/453.2f679600.chunk.js",
     "static/media/logo.svg": "/kidcash_tma_test/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/kidcash_tma_test/index.html",
     "main.f855e6bc.css.map": "/kidcash_tma_test/static/css/main.f855e6bc.css.map",
-    "main.b01a38d0.js.map": "/kidcash_tma_test/static/js/main.b01a38d0.js.map",
+    "main.fd878c85.js.map": "/kidcash_tma_test/static/js/main.fd878c85.js.map",
     "453.2f679600.chunk.js.map": "/kidcash_tma_test/static/js/453.2f679600.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.b01a38d0.js"
+    "static/js/main.fd878c85.js"
   ]
 }
