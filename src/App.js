@@ -1,18 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import TaskList from './components/Child/TaskList';
+import { authenticateUser } from './services/authService';
+import { useState } from 'react';
 
-import React, { useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
+function MyButton() {
+  function handleClick()
+  {
+    alert('Вы нажали на меня!');
+  }
+  return (
+    <button onClick={handleClick}>Я кнопка</button>
+  );
+}
 
 function App() {
   const [user, setUser] = useState(null); // Состояние для хранения информации о пользователе
+  const [error, setError] = useState(null); // Состояние для хранения ошибок
+  
+  /*
+  useEffect(() => {
+    // Инициализируем Telegram Web Apps SDK
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // Разворачиваем приложение на весь экран
+  // Изменение заголовка приложения
+  tg.MainButton.text = "Нажми меня!";
+  tg.MainButton.show();
+    
+
+  }, []);
+  */
+
 
 
   useEffect(() => {
-    // Инициализируем Telegram Web Apps SDK
-    //const tg = window.Telegram.WebApp;
-
 
     if (window.Telegram && window.Telegram.WebApp) {
+      // Инициализируем Telegram Web Apps SDK
       const tg = window.Telegram.WebApp;
       tg.expand(); // Разворачиваем приложение на весь экран
       
@@ -31,15 +61,30 @@ function App() {
 
       fetchUserData();
 
+
+      /*
+    // Вызов функции аутентификации
+    const authenticate = async () => {
+      try {
+        const userData = await authenticateUser();
+        console.log('User authenticated:', userData);
+      } catch (error) {
+        console.error('Authentication failed:', error);
+      }
+    };
+    
+    authenticate();
+    */
+
+
     } else {
       console.error('Telegram WebApp SDK не доступен');
     }
 
-
-
-    
-
   }, []);
+
+
+  
 
   return (
     <div className="App">
