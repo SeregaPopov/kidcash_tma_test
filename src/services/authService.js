@@ -8,13 +8,13 @@ export const authenticateUser = async () => {
   const initDataUnsafe = tg.initDataUnsafe;
 
   try {
-    const response = await axios.post('${API_URL}/auth/telegram/', {
+    const response = await axios.post(`${API_URL}/auth/telegram/`, {
       initData,
     });
 
     // Сохраняем токен в localStorage или context
     const token = response.data.access;
-    axios.defaults.headers.common['Authorization'] = 'Bearer ${token}';
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
     return response.data;
   } catch (error) {
