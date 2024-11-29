@@ -62,7 +62,7 @@ function App() {
       fetchUserData();
 
 
-      /*
+      
     // Вызов функции аутентификации
     const authenticate = async () => {
       try {
@@ -74,7 +74,7 @@ function App() {
     };
     
     authenticate();
-    */
+    
 
 
     } else {
